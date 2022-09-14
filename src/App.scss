@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700&display=swap');
+
+$grey-5: #010102;
+$grey-4: #0e0c11;
+$grey-3: #17161c;
+$grey-2: #211f28;
+$grey-1: #2f2c38;
+
+
+$teal-4: #430094;
+$teal-3: #773fd7;
+$teal-2: #a58ae1;
+$teal-1: #c7bde3;
+
+body {
+    background-color: $grey-4;
+}
+
+//.overlay {
+   // position: fixed;
+    //background:  $grey-4;
+    //background: -webkit-linear-gradient(to top, $grey-3, $grey-4);
+    //background: linear-gradient(to top, $grey-3, $grey-4);
+    //height: 100vh;
+    //width: 100%;
+    //z-index: -1;
+//}
+
+
+h1, h2, h3, h4, h5, h6, p, span, div, ul, li, ol, label {
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+}
+
+.card {
+    background-color: $grey-2;
+    border-radius: 15px;
+}
+
+.time {
+    color: #8a8a8a;
+}
+
+.pfp {
+    width: 80%;
+    border-radius: 50%;
+}
+
+.btn-post {
+    background-color: $teal-4;
+    border: none;
+    border-radius: 10px;
+    &:hover {
+        background-color: $teal-3;
+    }
+    &:focus {
+        background-color: $teal-4;
+        box-shadow: none;
+        border: none;
+    }
+    &:disabled {
+        background-color: $grey-2;
+    }
+}
+
+.btn-primary {
+    background-color: $teal-4;
+    border: none;
+    border-radius: 10px;
+    &:hover {
+        background-color: $teal-3;
+    }
+    &:focus {
+        background-color: $teal-4;
+        box-shadow: none;
+        border: none;
+    }
+}
+
+.btn-secondary {
+    background-color: $grey-3;
+    border: none;
+    border-radius: 10px;
+    &:hover {
+        background-color: $grey-2;
+    }
+    &:focus {
+        background-color: $teal-4;
+        box-shadow: none;
+        border: none;
+    }
+}
+
+.modal-content {
+    background-color: $grey-5;
+    border-radius: 15px;
+    .modal-header{
+      border: none;
+        a {
+            color: white;
+            text-decoration: none;
+            font-size: 2rem
+        }
+    }
+    .form-control {
+        background-color: $grey-5 !important;
+        border-radius: 10px;
+        border: none;
+        box-shadow: none !important;
+        resize: none;
+        color: white !important;
+    }
+    .modal-footer {
+        border: none;
+    }
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid $teal-4;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: $teal-4 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+

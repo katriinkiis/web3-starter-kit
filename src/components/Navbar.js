@@ -1,25 +1,23 @@
+import CreatePostButton from "./posts/CreatePostButton";
+
 function Navbar(props) {
 
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">Web3 Starter Kit</a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div className="navbar-nav ms-auto">
-            {
-              props.account ?
-              props.account
-              :
-              <a className="btn btn-primary" aria-current="page" href="#" onClick={props.connectWallet}>Connect Wallet</a>
-            }
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
+    const setModalOpen = props.setModalOpen
+
+    return (
+        <nav className="navbar fixed-top">
+            <div className='container'>
+                <div className='col-3'>
+                    {/* <a className="navbar-brand" href="#">Litter</a> */}
+                    <div className="card mt-2 me-3">
+                        <div className="card-body">
+                            <CreatePostButton setModalOpen={setModalOpen} />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    );
 }
 
 export default Navbar;

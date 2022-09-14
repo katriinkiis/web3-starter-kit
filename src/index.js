@@ -3,6 +3,7 @@ import { ethereum } from 'aleph-js'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-bootstrap'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -39,7 +40,7 @@ const connectWeb3 = async (e) => {
     }
   }
 
-  return {
+  return { // returns object containing two elements
     alephAccount: alephAccount,
     web3: web3
   }
@@ -47,7 +48,7 @@ const connectWeb3 = async (e) => {
 
 ReactDOM.render(
   <React.StrictMode>
-    <App connectWeb3={connectWeb3} />
+    <App connectWeb3={connectWeb3} /> {/* define a prop */}
   </React.StrictMode>,
   document.getElementById('root')
 );
