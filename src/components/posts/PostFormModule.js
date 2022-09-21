@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import {ModalBody} from "react-bootstrap";
+import PostModel from "../../models/PostModel";
+import pfp from "../../images/ilves.jpg";
 
 
 
@@ -31,23 +33,18 @@ function PostFormModule(props) {
 
         setTxInProgress(true)
 
-       posts.submit(
+        PostModel.create(
             props.alephAccount.address,
-            'chat',
-            {'body': postContent},
-            {
-                'account': props.alephAccount,
-                'channel': 'TEST',
-                'api_server': 'https://api2.aleph.im',
-                'ref': 'hall'
-            }
-        ).catch((error) => {
-        setTxInProgress(false)
-       })
+            postContent,
+            props.alephAccount)
+            .catch((error) => {
+            setTxInProgress(false)
+        })
     }
 
     useEffect(() => {
         if (props.modalOpen) {
+            setPostContent('')
             setTxInProgress(false)
         }
     }, [props.modalOpen])
@@ -76,9 +73,6 @@ return (
                     <textarea  onChange={handleTyping} placeholder='What´s on your mind?' className="form-control"/>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={close}>
-                        Cancel
-                    </Button>
                     <Button variant="primary"
                             className="btn-post"
                             onClick={submitPost}

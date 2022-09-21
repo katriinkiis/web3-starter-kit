@@ -16,16 +16,14 @@ body {
     background-color: $grey-4;
 }
 
-//.overlay {
-   // position: fixed;
-    //background:  $grey-4;
-    //background: -webkit-linear-gradient(to top, $grey-3, $grey-4);
-    //background: linear-gradient(to top, $grey-3, $grey-4);
-    //height: 100vh;
-    //width: 100%;
-    //z-index: -1;
-//}
+.navbar-brand {
+    color: $teal-2;
+    font-size: 2rem;
+}
 
+.link {
+    text-decoration: none;
+}
 
 h1, h2, h3, h4, h5, h6, p, span, div, ul, li, ol, label {
     font-family: 'Work Sans', sans-serif;
@@ -46,10 +44,25 @@ h1, h2, h3, h4, h5, h6, p, span, div, ul, li, ol, label {
     border-radius: 50%;
 }
 
-.btn-post {
+.btn-primary {
     background-color: $teal-4;
     border: none;
     border-radius: 10px;
+    padding: 8px 16px;
+    &:hover {
+        background-color: $teal-3;
+    }
+    &:focus {
+        background-color: $teal-4;
+        box-shadow: none;
+        border: none;
+    }
+}
+
+.btn-post {
+    background-color: $teal-4;
+    border: none;
+    border-radius: 15px;
     &:hover {
         background-color: $teal-3;
     }
@@ -63,32 +76,12 @@ h1, h2, h3, h4, h5, h6, p, span, div, ul, li, ol, label {
     }
 }
 
-.btn-primary {
-    background-color: $teal-4;
-    border: none;
-    border-radius: 10px;
-    &:hover {
-        background-color: $teal-3;
-    }
-    &:focus {
-        background-color: $teal-4;
-        box-shadow: none;
-        border: none;
-    }
-}
+.account-btn {
+    background-color: $grey-5;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 15px;
 
-.btn-secondary {
-    background-color: $grey-3;
-    border: none;
-    border-radius: 10px;
-    &:hover {
-        background-color: $grey-2;
-    }
-    &:focus {
-        background-color: $teal-4;
-        box-shadow: none;
-        border: none;
-    }
 }
 
 .modal-content {
@@ -150,6 +143,8 @@ h1, h2, h3, h4, h5, h6, p, span, div, ul, li, ol, label {
         transform: rotate(360deg);
     }
 }
+
+
 
 
 

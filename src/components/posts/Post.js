@@ -1,5 +1,7 @@
 import {useState} from 'react'
-import pfp  from '../images/ilves.jpg'
+import { Link } from "react-router-dom";
+
+import pfp  from '../../images/ilves.jpg'
 
 function Post(props) {
 
@@ -20,32 +22,37 @@ function Post(props) {
     }
 
 
-
     return (
         <div>
-            {content !== '' && content !== undefined ?
-                <div className='post card my-3'>
-                    <div className='card-body'>
-                        <div className="row">
-                            <div className="col-2">
-                                <img className="pfp"
-                                     src={pfp}
-                                     alt="profilePicture"/>
-                            </div>
-                            <div className="col-10">
-                                <p className="user mb-0">
-                                    <b>{address}</b> · <span className="time">{timePosted}</span>
-                                </p>
-                                <p>{content}</p>
+            {
+                shouldDisplay(content) ?
+                <Link to={`/posts/${props.post.item_hash}`} className="link">
+                    <div className='post card my-3'>
+                        <div className='card-body'>
+                            <div className="row">
+                                <div className="col-2">
+                                    <img className="pfp"
+                                         src={pfp}
+                                         alt="profilePicture"/>
+                                </div>
+                                <div className="col-10">
+                                    <p className="user mb-0">
+                                        <b>{address}</b>
+                                        ·
+                                        <span className="time">
+                                            {timePosted}
+                                        </span>
+                                    </p>
+                                    <p>{content}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </Link>
                 :
                 ''
             }
         </div>
-
     );
 }
 

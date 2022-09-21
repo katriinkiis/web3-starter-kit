@@ -1,6 +1,5 @@
-import  { posts } from "aleph-js";
+import PostModel from '../../../src/models/PostModel'
 import { useState, useEffect } from 'react'
-
 import Post from './Post'
 
 function Posts(props) {
@@ -13,11 +12,8 @@ function Posts(props) {
     }
 
     const LoadPosts = async () => {
-        const response = await posts.get_posts(
-            'chat',
-            {'refs': ['hall']}
-        )
-        setLoadedPosts(response.posts)
+        const posts = await PostModel.timeline()
+        setLoadedPosts(posts)
     }
 
     useEffect(() => {
